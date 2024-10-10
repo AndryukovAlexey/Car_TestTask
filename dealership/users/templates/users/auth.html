@@ -1,0 +1,22 @@
+{% extends 'cars/main.html' %}
+{%block title%}<title>Авторизация</title>{%endblock%}
+{% block content %}
+    <main>
+        <form method="POST">
+            {% csrf_token %}
+
+            <h2 style="margin-bottom: 20px;">Авторизация</h2>
+
+            {% if form.errors %}
+                <p>Вы ввели неправильный логин или пароль!</p>
+            {% endif %}
+            <div >                    
+                <input type="text " name="username" placeholder="Ваше имя">
+            </div>
+            <div >
+                <input name="password" type="password" placeholder="Ваш пароль: ">
+            </div>   
+            <button >Войти</button>
+        </form>
+    </main>
+{% endblock %}

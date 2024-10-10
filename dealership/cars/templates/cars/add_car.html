@@ -1,0 +1,25 @@
+{% extends 'cars/main.html' %}
+{%block title%}<title>Добавление авто</title>{%endblock%}
+{% block content %}
+    <main>
+        <form method="POST">
+            {% csrf_token %}
+
+            <h2 style="margin-bottom: 20px;">Добавление авто</h2>
+            <div >               
+                {{form.make}}
+            </div>
+            <div >
+                {{form.model}}
+            </div>
+            <div >
+                {{form.year}}
+            </div> 
+            <div >
+                {{form.description}}
+            </div> 
+
+            <button >Создать</button>
+        </form>
+    </main>
+{% endblock %}

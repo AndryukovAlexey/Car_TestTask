@@ -1,0 +1,25 @@
+{% extends 'cars/main.html' %}
+{%block title%}<title>Изменение {{car.make}} {{car.model}}</title>{%endblock%}
+{% block content %}
+    <main>
+        <div><a href="{%url 'delete_car-page' car.id%}">Удалить пост</a></div>
+        <form method="POST">
+            {% csrf_token %}
+            <h2 style="margin-bottom: 20px;">Изменение авто</h2>
+            <div >               
+                {{form.make}}
+            </div>
+            <div >
+                {{form.model}}
+            </div>
+            <div >
+                {{form.year}}
+            </div> 
+            <div >
+                {{form.description}}
+            </div> 
+            <button>Отправить</button>
+        </form>
+        
+      </main>
+{% endblock %}

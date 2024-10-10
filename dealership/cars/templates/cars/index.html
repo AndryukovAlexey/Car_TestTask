@@ -1,0 +1,15 @@
+{% extends 'cars/main.html' %}
+{%block title%}<title>{{title}}</title>{%endblock%}
+{% block content %}
+    <main>
+      {% if user.is_authenticated %}<button><a href="{%url 'add_car-page'%}">Добавить авто</a></button>{%endif%}
+        <article style="margin-left: 50px;">
+          {%for car in cars%}
+            <section style="margin: 40px;">
+                <div><h3 ><a href="{%url 'car-page' car.id %}">{{car.make}} {{car.model}}</a></h3></div>
+            </section>
+          {% endfor %}
+        </article>
+        
+      </main>
+{% endblock %}
